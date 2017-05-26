@@ -1,0 +1,126 @@
+
+
+	<div class="site-content">
+        <header class="site-header" data-bg-image="">
+            <div class="container">
+                <div class="header-bar">
+                    <a href="#" class="branding">
+                        <img src="~/images/logo_2.png" alt="" class="logo">
+                        <div class="logo-type">
+                            <h1 class="site-title">Laboratoire Gharbi Aloui Monia</h1>
+                            <small class="site-description">Analyses médicales</small>
+                        </div>
+                    </a>
+                    <nav class="main-navigation">
+                        <button class="menu-toggle"><i class="fa fa-bars"></i></button>
+                        <ul class="menu">
+                            <li class="home menu-item current-menu-item">
+                                <a href="/Home/Index"><img src="~/images/home-icon.png" alt="Home"></a>
+                            </li>
+                            <li class="menu-item">@Html.ActionLink("A propos", "About")</li>
+                            <li class="menu-item">@Html.ActionLink("Nos services", "Services")</li>
+                            <li class="menu-item">@Html.ActionLink("Contact", "Contact")</li>
+                            <li class="menu-item">@Html.ActionLink("Forum", "Forum")</li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-navigation"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-head" style="background-image: url(/images/page-head-2.jpg)">
+            <div class="container">
+                <h2 class="page-title">Forum</h2>
+            </div>
+        </div>
+
+            <main class="main-content">
+                <div class="fullwidth-block">
+                    <div class="container">
+                        <h2 class="section-title">@Model.Post.PostTitle a dit :</h2>
+                        <p>
+                            @Model.Post.PostContent
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <h3>Laisser un commentaire</h3>
+                    <div class="row contact-form">
+                        <form action="/Home/Comment/@Model.Post.PostId" method="post">
+                            <div class="col-md-4">
+                                <p>Nom :@Html.EditorFor(model => model.CommentAuthor,)</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p>
+                                    @Html.TextAreaFor(model => model.CommentContent, )
+                                </p>
+                                <p class="text-right">
+                                    <input type="submit" value="Commenter">
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="fullwidth-block">
+                    <div class="container">
+                          <div class="checked-box">
+                                    <h3>@item.CommentAuthor a dit :</h3>
+                                    <p>
+                                        @item.CommentContent
+                                    </p>
+                                </div>
+                        
+                    </div>
+                </div>
+
+
+                <div class="fullwidth-block" data-bg-color="#edf2f4">
+                    <div class="container">
+                        <div class="subscribe-form">
+                            <h2>Boîte a lettre</h2>
+                            <form action="#">
+                                <input type="text" placeholder="Email">
+                                <input type="submit" value="Joindre">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </main>
+            <!-- .main-content -->
+
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="widget">
+                                <h3 class="widget-title">Notre Adresse</h3>
+                                <strong>Laboratoire Gharbi Aloui Monia</strong>
+                                <address>AVENU HBIB BOURGUIBA angle rue ARIHA / BARDO 2</address>
+                                <a href="tel:+216 50 272707"><i class="fa fa-mobile"></i>&nbsp;+216 50 272707</a> <br>
+                                <a href="tel:+216 50 272707"><i class="fa fa-phone"></i>&nbsp;+216 31 404025</a> <br>
+                                <a href="mailto:laboratoiregharbimonia@gmail.com">laboratoiregharbimonia@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="widget">
+                                <h3 class="widget-title">Plan du site</h3>
+                                <ul class="arrow-list">
+                                    <li class="menu-item">@Html.ActionLink("A propos", "About")</li>
+                                    <li class="menu-item">@Html.ActionLink("Nos services", "Services")</li>
+                                    <li class="menu-item">@Html.ActionLink("Contact", "Contact")</li>
+                                    <li class="menu-item">@Html.ActionLink("Forum", "Forum")</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .row -->
+                    <!--	<p class="colophon">copyright 2014 Company name. Designed by <a href="http://www.vandelaydesign.com/" title="Designed by VandelayDesign.com" target="_blank">VandelayDesign.com</a>. All rights reserved</p> -->
+                </div>
+                <!-- .container -->
+            </footer>
+ </div>
